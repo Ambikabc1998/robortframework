@@ -7,7 +7,7 @@ Resource    ../Resource/Base/CommonFunctionality.resource
 Test Teardown       Close Browser
 
 *** Test Cases ***
-verify Valid Credential Test
+verify Invalid Credential Test
 
     Launch Browser and navigate to url
     Input Text    id=txtUsername    Abcd
