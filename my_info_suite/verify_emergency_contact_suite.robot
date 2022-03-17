@@ -3,13 +3,14 @@ Documentation
 
 Resource    ../Resource/Base/CommonFunctionality.resource
 
+Library     DataDriver      file=../test_data/orange_data.xlsx      sheet_name=AddEmercencyContact
+
 Test Setup      Launch Browser and navigate to url
 Test Teardown       Close Browser
 Test Template       Verify Add Emercency Contact Test
 
 *** Test Cases ***
-TC1     Admin   admin123    john    brother     787878
-TC2     Admin   admin123    sandy   sister      787878
+TC1
 
 *** Keywords ***
 Verify Add Emercency Contact Test
