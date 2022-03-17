@@ -1,72 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220317 14:21:51.615" rpa="false" schemaversion="2">
-<suite id="s1" name="Verify Invalidcredential Suite" source="E:\LTTS\robort\robot_framework\login_suite\verify_invalidcredential_suite.robot">
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220317 15:40:36.631" rpa="false" schemaversion="2">
+<suite id="s1" name="Verify Emergency Contact Suite" source="E:\LTTS\robort\robot_framework\my_info_suite\verify_emergency_contact_suite.robot">
 <test id="s1-t1" name="TC1">
 <kw name="Launch Browser and navigate to url" library="CommonFunctionality" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>browser=${BROWSER_NAME}</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220317 14:21:52.163" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220317 14:21:52.162" endtime="20220317 14:21:53.982"/>
+<msg timestamp="20220317 15:40:37.102" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220317 15:40:37.102" endtime="20220317 15:40:41.379"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220317 14:21:53.983" endtime="20220317 14:21:54.122"/>
+<status status="PASS" starttime="20220317 15:40:41.380" endtime="20220317 15:40:41.513"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220317 14:21:54.122" endtime="20220317 14:21:54.125"/>
+<status status="PASS" starttime="20220317 15:40:41.513" endtime="20220317 15:40:41.516"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220317 14:21:54.127" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220317 14:21:54.126" endtime="20220317 14:22:01.884"/>
+<msg timestamp="20220317 15:40:41.517" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<status status="PASS" starttime="20220317 15:40:41.517" endtime="20220317 15:41:40.526"/>
 </kw>
-<status status="PASS" starttime="20220317 14:21:52.161" endtime="20220317 14:22:01.885"/>
+<status status="PASS" starttime="20220317 15:40:37.101" endtime="20220317 15:41:40.527"/>
 </kw>
-<kw name="verify Invalid Credential Template">
-<arg>Johan</arg>
-<arg>john123</arg>
-<arg>Invalid credentials</arg>
+<kw name="Verify Add Emercency Contact Test">
+<arg>Admin</arg>
+<arg>admin123</arg>
+<arg>john</arg>
+<arg>brother</arg>
+<arg>787878</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=txtUsername</arg>
-<arg>${username}</arg>
+<arg>${userename}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220317 14:22:01.886" level="INFO">Typing text 'Johan' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220317 14:22:01.886" endtime="20220317 14:22:01.999"/>
+<msg timestamp="20220317 15:41:40.530" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
+<msg timestamp="20220317 15:41:40.539" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00CB9943+2595139]
+	Ordinal0 [0x00C4C9F1+2148849]
+	Ordinal0 [0x00B44528+1066280]
+	Ordinal0 [0x00B2C640+968256]
+	Ordinal0 [0x00B8E259+1368665]
+	Ordinal0 [0x00B9B292+1421970]
+	Ordinal0 [0x00B8B806+1357830]
+	Ordinal0 [0x00B66086+1204358]
+	Ordinal0 [0x00B66F96+1208214]
+	GetHandleVerifier [0x00E5B232+1658114]
+	GetHandleVerifier [0x00F1312C+2411516]
+	GetHandleVerifier [0x00D4F261+560433]
+	GetHandleVerifier [0x00D4E366+556598]
+	Ordinal0 [0x00C5286B+2173035]
+	Ordinal0 [0x00C575F8+2192888]
+	Ordinal0 [0x00C576E5+2193125]
+	Ordinal0 [0x00C611FC+2232828]
+	BaseThreadInitThunk [0x7642FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x776F7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x776F7A4E+238]
+</msg>
+<msg timestamp="20220317 15:41:41.084" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00CB9943+2595139]
+	Ordinal0 [0x00C4C9F1+2148849]
+	Ordinal0 [0x00B44528+1066280]
+	Ordinal0 [0x00B2C640+968256]
+	Ordinal0 [0x00B8E259+1368665]
+	Ordinal0 [0x00B9B292+1421970]
+	Ordinal0 [0x00B8B806+1357830]
+	Ordinal0 [0x00B66086+1204358]
+	Ordinal0 [0x00B66F96+1208214]
+	GetHandleVerifier [0x00E5B232+1658114]
+	GetHandleVerifier [0x00F1312C+2411516]
+	GetHandleVerifier [0x00D4F261+560433]
+	GetHandleVerifier [0x00D4E366+556598]
+	Ordinal0 [0x00C5286B+2173035]
+	Ordinal0 [0x00C575F8+2192888]
+	Ordinal0 [0x00C576E5+2193125]
+	Ordinal0 [0x00C611FC+2232828]
+	BaseThreadInitThunk [0x7642FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x776F7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x776F7A4E+238]
+</msg>
+<status status="FAIL" starttime="20220317 15:41:40.530" endtime="20220317 15:41:41.085"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>id=txtPassword</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220317 14:22:02.000" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220317 14:22:02.045" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220317 14:22:02.100" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220317 14:22:01.999" endtime="20220317 14:22:02.100"/>
+<status status="NOT RUN" starttime="20220317 15:41:41.085" endtime="20220317 15:41:41.085"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id=btnLogin</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220317 14:22:02.101" level="INFO">Clicking element 'id=btnLogin'.</msg>
-<status status="PASS" starttime="20220317 14:22:02.100" endtime="20220317 14:22:03.871"/>
+<status status="NOT RUN" starttime="20220317 15:41:41.086" endtime="20220317 15:41:41.086"/>
 </kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>xpath=//span[@id='spanMessage']</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220317 14:22:03.872" level="INFO">Verifying element 'xpath=//span[@id='spanMessage']' contains exact text 'Invalid credentials'.</msg>
-<status status="PASS" starttime="20220317 14:22:03.871" endtime="20220317 14:22:03.934"/>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My Info</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.086" endtime="20220317 15:41:41.086"/>
 </kw>
-<status status="PASS" starttime="20220317 14:22:01.885" endtime="20220317 14:22:03.934"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>link=My Info</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.086" endtime="20220317 15:41:41.087"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>link=Emergency Contacts</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.087" endtime="20220317 15:41:41.087"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=btnAddContact</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.087" endtime="20220317 15:41:41.087"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=emgcontacts_name</arg>
+<arg>${contact_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.087" endtime="20220317 15:41:41.088"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=emgcontacts_relationship</arg>
+<arg>${relationship}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.088" endtime="20220317 15:41:41.088"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=emgcontacts_homePhone</arg>
+<arg>${home_telephone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.088" endtime="20220317 15:41:41.088"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=btnSaveEContact</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.088" endtime="20220317 15:41:41.088"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>id=emgcontact_list</arg>
+<arg>${contact_name}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.089" endtime="20220317 15:41:41.089"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>id=emgcontact_list</arg>
+<arg>${home_telephone}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220317 15:41:41.089" endtime="20220317 15:41:41.089"/>
+</kw>
+<status status="FAIL" starttime="20220317 15:41:40.528" endtime="20220317 15:41:41.090"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220317 14:22:03.936" endtime="20220317 14:22:06.264"/>
+<status status="PASS" starttime="20220317 15:41:41.091" endtime="20220317 15:41:43.272"/>
 </kw>
-<status status="PASS" starttime="20220317 14:21:52.160" endtime="20220317 14:22:06.265"/>
+<status status="FAIL" starttime="20220317 15:40:37.100" endtime="20220317 15:41:43.275">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00CB9943+2595139]
+	Ordinal0 [0x00C4C9F1+2148849]
+	Ordinal0 [0x00B44528+1066280]
+	Ordinal0 [0x00B2C640+968256]
+	Ordinal0 [0x00B8E259+1368665]
+	Ordinal0 [0x00B9B292+1421970]
+	Ordinal0 [0x00B8B806+1357830]
+	Ordinal0 [0x00B66086+1204358]
+	Ordinal0 [0x00B66F96+1208214]
+	GetHandleVerifier [0x00E5B232+1658114]
+	GetHandleVerifier [0x00F1312C+2411516]
+	GetHandleVerifier [0x00D4F261+560433]
+	GetHandleVerifier [0x00D4E366+556598]
+	Ordinal0 [0x00C5286B+2173035]
+	Ordinal0 [0x00C575F8+2192888]
+	Ordinal0 [0x00C576E5+2193125]
+	Ordinal0 [0x00C611FC+2232828]
+	BaseThreadInitThunk [0x7642FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x776F7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x776F7A4E+238]
+</status>
 </test>
 <test id="s1-t2" name="TC2">
 <kw name="Launch Browser and navigate to url" library="CommonFunctionality" type="SETUP">
@@ -74,80 +197,254 @@
 <arg>browser=${BROWSER_NAME}</arg>
 <arg>executable_path=${EXECDIR}${/}driver${/}chromedriver.exe</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220317 14:22:06.269" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220317 14:22:06.268" endtime="20220317 14:22:08.154"/>
+<msg timestamp="20220317 15:41:43.282" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<status status="PASS" starttime="20220317 15:41:43.281" endtime="20220317 15:41:45.500"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220317 14:22:08.154" endtime="20220317 14:22:08.326"/>
+<status status="PASS" starttime="20220317 15:41:45.500" endtime="20220317 15:41:45.672"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>30s</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220317 14:22:08.327" endtime="20220317 14:22:08.330"/>
+<status status="PASS" starttime="20220317 15:41:45.672" endtime="20220317 15:41:45.673"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>url=${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220317 14:22:08.333" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220317 14:22:08.331" endtime="20220317 14:22:16.474"/>
+<msg timestamp="20220317 15:41:45.674" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
+<status status="PASS" starttime="20220317 15:41:45.673" endtime="20220317 15:42:00.612"/>
 </kw>
-<status status="PASS" starttime="20220317 14:22:06.268" endtime="20220317 14:22:16.475"/>
+<status status="PASS" starttime="20220317 15:41:43.280" endtime="20220317 15:42:00.613"/>
 </kw>
-<kw name="verify Invalid Credential Template">
-<arg>Peter</arg>
-<arg>peter123</arg>
-<arg>Invalid credentials</arg>
+<kw name="Verify Add Emercency Contact Test">
+<arg>Admin</arg>
+<arg>admin123</arg>
+<arg>sandy</arg>
+<arg>sister</arg>
+<arg>787878</arg>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id=txtUsername</arg>
-<arg>${username}</arg>
+<arg>${userename}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220317 14:22:16.481" level="INFO">Typing text 'Peter' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220317 14:22:16.478" endtime="20220317 14:22:16.586"/>
+<msg timestamp="20220317 15:42:00.621" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
+<msg timestamp="20220317 15:42:00.628" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00CB9943+2595139]
+	Ordinal0 [0x00C4C9F1+2148849]
+	Ordinal0 [0x00B44528+1066280]
+	Ordinal0 [0x00B2C640+968256]
+	Ordinal0 [0x00B8E259+1368665]
+	Ordinal0 [0x00B9B292+1421970]
+	Ordinal0 [0x00B8B806+1357830]
+	Ordinal0 [0x00B66086+1204358]
+	Ordinal0 [0x00B66F96+1208214]
+	GetHandleVerifier [0x00E5B232+1658114]
+	GetHandleVerifier [0x00F1312C+2411516]
+	GetHandleVerifier [0x00D4F261+560433]
+	GetHandleVerifier [0x00D4E366+556598]
+	Ordinal0 [0x00C5286B+2173035]
+	Ordinal0 [0x00C575F8+2192888]
+	Ordinal0 [0x00C576E5+2193125]
+	Ordinal0 [0x00C611FC+2232828]
+	BaseThreadInitThunk [0x7642FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x776F7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x776F7A4E+238]
+</msg>
+<msg timestamp="20220317 15:42:00.634" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00CB9943+2595139]
+	Ordinal0 [0x00C4C9F1+2148849]
+	Ordinal0 [0x00B44528+1066280]
+	Ordinal0 [0x00B2C640+968256]
+	Ordinal0 [0x00B8E259+1368665]
+	Ordinal0 [0x00B9B292+1421970]
+	Ordinal0 [0x00B8B806+1357830]
+	Ordinal0 [0x00B66086+1204358]
+	Ordinal0 [0x00B66F96+1208214]
+	GetHandleVerifier [0x00E5B232+1658114]
+	GetHandleVerifier [0x00F1312C+2411516]
+	GetHandleVerifier [0x00D4F261+560433]
+	GetHandleVerifier [0x00D4E366+556598]
+	Ordinal0 [0x00C5286B+2173035]
+	Ordinal0 [0x00C575F8+2192888]
+	Ordinal0 [0x00C576E5+2193125]
+	Ordinal0 [0x00C611FC+2232828]
+	BaseThreadInitThunk [0x7642FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x776F7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x776F7A4E+238]
+</msg>
+<status status="FAIL" starttime="20220317 15:42:00.619" endtime="20220317 15:42:00.634"/>
 </kw>
 <kw name="Input Password" library="SeleniumLibrary">
 <arg>id=txtPassword</arg>
 <arg>${password}</arg>
 <doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220317 14:22:16.587" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220317 14:22:16.637" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220317 14:22:16.692" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220317 14:22:16.586" endtime="20220317 14:22:16.692"/>
+<status status="NOT RUN" starttime="20220317 15:42:00.635" endtime="20220317 15:42:00.635"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>id=btnLogin</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220317 14:22:16.693" level="INFO">Clicking element 'id=btnLogin'.</msg>
-<status status="PASS" starttime="20220317 14:22:16.692" endtime="20220317 14:22:18.271"/>
+<status status="NOT RUN" starttime="20220317 15:42:00.635" endtime="20220317 15:42:00.635"/>
 </kw>
-<kw name="Element Text Should Be" library="SeleniumLibrary">
-<arg>xpath=//span[@id='spanMessage']</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
-<msg timestamp="20220317 14:22:18.275" level="INFO">Verifying element 'xpath=//span[@id='spanMessage']' contains exact text 'Invalid credentials'.</msg>
-<status status="PASS" starttime="20220317 14:22:18.273" endtime="20220317 14:22:18.409"/>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>My Info</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.636" endtime="20220317 15:42:00.636"/>
 </kw>
-<status status="PASS" starttime="20220317 14:22:16.476" endtime="20220317 14:22:18.410"/>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>link=My Info</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.636" endtime="20220317 15:42:00.636"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>link=Emergency Contacts</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.636" endtime="20220317 15:42:00.636"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=btnAddContact</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.636" endtime="20220317 15:42:00.636"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=emgcontacts_name</arg>
+<arg>${contact_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.637" endtime="20220317 15:42:00.637"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=emgcontacts_relationship</arg>
+<arg>${relationship}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.637" endtime="20220317 15:42:00.637"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=emgcontacts_homePhone</arg>
+<arg>${home_telephone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.637" endtime="20220317 15:42:00.637"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=btnSaveEContact</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.637" endtime="20220317 15:42:00.637"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>id=emgcontact_list</arg>
+<arg>${contact_name}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.638" endtime="20220317 15:42:00.638"/>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<arg>id=emgcontact_list</arg>
+<arg>${home_telephone}</arg>
+<doc>Verifies table contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20220317 15:42:00.638" endtime="20220317 15:42:00.638"/>
+</kw>
+<status status="FAIL" starttime="20220317 15:42:00.617" endtime="20220317 15:42:00.639"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220317 14:22:18.411" endtime="20220317 14:22:20.729"/>
+<status status="PASS" starttime="20220317 15:42:00.640" endtime="20220317 15:42:04.378"/>
 </kw>
-<status status="PASS" starttime="20220317 14:22:06.267" endtime="20220317 14:22:20.734"/>
+<status status="FAIL" starttime="20220317 15:41:43.279" endtime="20220317 15:42:04.379">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00CB9943+2595139]
+	Ordinal0 [0x00C4C9F1+2148849]
+	Ordinal0 [0x00B44528+1066280]
+	Ordinal0 [0x00B2C640+968256]
+	Ordinal0 [0x00B8E259+1368665]
+	Ordinal0 [0x00B9B292+1421970]
+	Ordinal0 [0x00B8B806+1357830]
+	Ordinal0 [0x00B66086+1204358]
+	Ordinal0 [0x00B66F96+1208214]
+	GetHandleVerifier [0x00E5B232+1658114]
+	GetHandleVerifier [0x00F1312C+2411516]
+	GetHandleVerifier [0x00D4F261+560433]
+	GetHandleVerifier [0x00D4E366+556598]
+	Ordinal0 [0x00C5286B+2173035]
+	Ordinal0 [0x00C575F8+2192888]
+	Ordinal0 [0x00C576E5+2193125]
+	Ordinal0 [0x00C611FC+2232828]
+	BaseThreadInitThunk [0x7642FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x776F7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x776F7A4E+238]
+</status>
 </test>
-<doc>credential test.</doc>
-<status status="PASS" starttime="20220317 14:21:51.646" endtime="20220317 14:22:20.738"/>
+<status status="FAIL" starttime="20220317 15:40:36.651" endtime="20220317 15:42:04.383"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Verify Invalidcredential Suite">Verify Invalidcredential Suite</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Verify Emergency Contact Suite">Verify Emergency Contact Suite</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220317 15:41:40.539" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00CB9943+2595139]
+	Ordinal0 [0x00C4C9F1+2148849]
+	Ordinal0 [0x00B44528+1066280]
+	Ordinal0 [0x00B2C640+968256]
+	Ordinal0 [0x00B8E259+1368665]
+	Ordinal0 [0x00B9B292+1421970]
+	Ordinal0 [0x00B8B806+1357830]
+	Ordinal0 [0x00B66086+1204358]
+	Ordinal0 [0x00B66F96+1208214]
+	GetHandleVerifier [0x00E5B232+1658114]
+	GetHandleVerifier [0x00F1312C+2411516]
+	GetHandleVerifier [0x00D4F261+560433]
+	GetHandleVerifier [0x00D4E366+556598]
+	Ordinal0 [0x00C5286B+2173035]
+	Ordinal0 [0x00C575F8+2192888]
+	Ordinal0 [0x00C576E5+2193125]
+	Ordinal0 [0x00C611FC+2232828]
+	BaseThreadInitThunk [0x7642FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x776F7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x776F7A4E+238]
+</msg>
+<msg timestamp="20220317 15:42:00.628" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=99.0.4844.51)
+Stacktrace:
+Backtrace:
+	Ordinal0 [0x00CB9943+2595139]
+	Ordinal0 [0x00C4C9F1+2148849]
+	Ordinal0 [0x00B44528+1066280]
+	Ordinal0 [0x00B2C640+968256]
+	Ordinal0 [0x00B8E259+1368665]
+	Ordinal0 [0x00B9B292+1421970]
+	Ordinal0 [0x00B8B806+1357830]
+	Ordinal0 [0x00B66086+1204358]
+	Ordinal0 [0x00B66F96+1208214]
+	GetHandleVerifier [0x00E5B232+1658114]
+	GetHandleVerifier [0x00F1312C+2411516]
+	GetHandleVerifier [0x00D4F261+560433]
+	GetHandleVerifier [0x00D4E366+556598]
+	Ordinal0 [0x00C5286B+2173035]
+	Ordinal0 [0x00C575F8+2192888]
+	Ordinal0 [0x00C576E5+2193125]
+	Ordinal0 [0x00C611FC+2232828]
+	BaseThreadInitThunk [0x7642FA29+25]
+	RtlGetAppContainerNamedObjectPath [0x776F7A7E+286]
+	RtlGetAppContainerNamedObjectPath [0x776F7A4E+238]
+</msg>
 </errors>
 </robot>
