@@ -1,30 +1,32 @@
 *** Settings ***
-Documentation
-
+Documentation      This suite handles test case related to emergency contact
 Resource    ../Resource/Base/CommonFunctionality.resource
+Resource    ../Resource/Pages/LoginPage.resource
+Resource    ../Resource/Pages/MainPage.resource
+Resource    ../Resource/Pages/MyInfoPage.resource
+Resource    ../Resource/Pages/EmergencyContactPage.resource
 
-Library     DataDriver      file=../test_data/orange_data.xlsx      sheet_name=AddEmercencyContact
+Library     DataDriver      file=../test_data/orange_data.xlsx      sheet_name=AddEmergencyContact
 
-Test Setup      Launch Browser and navigate to url
-Test Teardown       Close Browser
-Test Template       Verify Add Emercency Contact Test
+Test Setup      Launch Browser And Navigate To URL
+Test Teardown      Close Browser
+
+Test Template       Verify Add Emergency Contact Template
 
 *** Test Cases ***
-TC1
+Verify Add Emergency Contact Test
 
 *** Keywords ***
-Verify Add Emercency Contact Test
-    [Arguments]     ${userename}    ${password}     ${contact_name}     ${relationship}     ${home_telephone}
-    Input Text    id=txtUsername    ${userename}
-    Input Password    id=txtPassword    ${password}
-    Click Element    id=btnLogin
-    Page Should Contain    My Info
-    Click Element    link=My Info
-    Click Element    link=Emergency Contacts
-    Click Element    id=btnAddContact
-    Input Text    id=emgcontacts_name    ${contact_name}
-    Input Text    id=emgcontacts_relationship    ${relationship}
-    Input Text    id=emgcontacts_homePhone    ${home_telephone}
-    Click Element    id=btnSaveEContact
-    Table Should Contain    id=emgcontact_list    ${contact_name}
-    Table Should Contain    id=emgcontact_list    ${home_telephone}
+Verify Add Emergency Contact Template
+    [Arguments]     ${username}     ${password}     ${contact_name}     ${relationship}     ${home_telephone}
+    Enter Username      ${username}
+    Enter Password    ${password}
+    Click On Login
+    Click On MyInfo
+    Click On Emergency Contact
+    Click On Add Emergency Contact
+    Enter Contact Name      ${contact_name}
+    Enter Relationship      ${relationship}
+    Enter Home Telephone    ${home_telephone}
+    Click On Save
+    Validation On Added Contacts    ${contact_name}     ${relationship}     ${home_telephone}

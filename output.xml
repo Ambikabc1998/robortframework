@@ -1,120 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220318 11:05:44.113" rpa="false" schemaversion="2">
-<suite id="s1" name="Verify Validcredential Suite" source="E:\LTTS\robort\robot_framework\login_suite\verify_validcredential_suite.robot">
-<test id="s1-t1" name="verify Valid Credential Test">
-<kw name="Launch Browser And Navigate To URL" library="CommonFunctionality" type="SETUP">
-<if>
-<branch type="IF" condition="'${BROWSER_NAME}'=='edge'">
-<kw name="Set Local Variable" library="BuiltIn">
-<arg>${driver_name}</arg>
-<arg>msedgedriver.exe</arg>
-<doc>Makes a variable available everywhere within the local scope.</doc>
-<status status="NOT RUN" starttime="20220318 11:05:47.982" endtime="20220318 11:05:47.982"/>
-</kw>
-<status status="NOT RUN" starttime="20220318 11:05:47.982" endtime="20220318 11:05:47.982"/>
-</branch>
-<branch type="ELSE IF" condition="'${BROWSER_NAME}'== 'chrome'">
-<kw name="Set Local Variable" library="BuiltIn">
-<arg>${driver_name}</arg>
-<arg>chromedriver.exe</arg>
-<doc>Makes a variable available everywhere within the local scope.</doc>
-<msg timestamp="20220318 11:05:47.984" level="INFO">${driver_name} = chromedriver.exe</msg>
-<status status="PASS" starttime="20220318 11:05:47.982" endtime="20220318 11:05:47.984"/>
-</kw>
-<status status="PASS" starttime="20220318 11:05:47.982" endtime="20220318 11:05:47.984"/>
-</branch>
-<branch type="ELSE">
-<kw name="Set Local Variable" library="BuiltIn">
-<arg>${driver_name}</arg>
-<arg>geckodriver.exe</arg>
-<doc>Makes a variable available everywhere within the local scope.</doc>
-<status status="NOT RUN" starttime="20220318 11:05:47.985" endtime="20220318 11:05:47.985"/>
-</kw>
-<status status="NOT RUN" starttime="20220318 11:05:47.985" endtime="20220318 11:05:47.985"/>
-</branch>
-<status status="PASS" starttime="20220318 11:05:47.981" endtime="20220318 11:05:47.985"/>
-</if>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>browser=${BROWSER_NAME}</arg>
-<arg>executable_path=${EXECDIR}${/}driver${/}${driver_name}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220318 11:05:47.986" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
-<status status="PASS" starttime="20220318 11:05:47.985" endtime="20220318 11:06:12.951"/>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220318 11:06:12.951" endtime="20220318 11:06:16.086"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<arg>30s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220318 11:06:16.086" endtime="20220318 11:06:16.186"/>
-</kw>
-<kw name="Set Screenshot Directory" library="SeleniumLibrary">
-<arg>${EXECDIR}${/}screenshot</arg>
-<doc>Sets the directory for captured screenshots.</doc>
-<status status="PASS" starttime="20220318 11:06:16.187" endtime="20220318 11:06:16.189"/>
-</kw>
-<kw name="Go To" library="SeleniumLibrary">
-<arg>url=${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20220318 11:06:16.191" level="INFO">Opening url 'https://opensource-demo.orangehrmlive.com/'</msg>
-<status status="PASS" starttime="20220318 11:06:16.190" endtime="20220318 11:06:22.500"/>
-</kw>
-<status status="PASS" starttime="20220318 11:05:47.981" endtime="20220318 11:06:22.501"/>
-</kw>
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>id=txtUsername</arg>
-<arg>Admin</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220318 11:06:22.502" level="INFO">Typing text 'Admin' into text field 'id=txtUsername'.</msg>
-<status status="PASS" starttime="20220318 11:06:22.501" endtime="20220318 11:06:23.286"/>
-</kw>
-<kw name="Input Password" library="SeleniumLibrary">
-<arg>id=txtPassword</arg>
-<arg>admin123</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<msg timestamp="20220318 11:06:23.288" level="INFO">Typing password into text field 'id=txtPassword'.</msg>
-<msg timestamp="20220318 11:06:23.345" level="INFO">Temporally setting log level to: NONE</msg>
-<msg timestamp="20220318 11:06:23.398" level="INFO">Log level changed from NONE to INFO.</msg>
-<status status="PASS" starttime="20220318 11:06:23.287" endtime="20220318 11:06:23.398"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>id=btnLogin</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220318 11:06:23.399" level="INFO">Clicking element 'id=btnLogin'.</msg>
-<status status="PASS" starttime="20220318 11:06:23.399" endtime="20220318 11:06:30.279"/>
-</kw>
-<kw name="Page Should Contain" library="SeleniumLibrary">
-<arg>My Info</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<msg timestamp="20220318 11:06:30.296" level="INFO">Current page contains text 'My Info'.</msg>
-<status status="PASS" starttime="20220318 11:06:30.280" endtime="20220318 11:06:30.296"/>
-</kw>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20220318 11:06:30.825" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshot/selenium-screenshot-2.png"&gt;&lt;img src="screenshot/selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20220318 11:06:30.297" endtime="20220318 11:06:30.825"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220318 11:06:30.826" endtime="20220318 11:06:34.686"/>
-</kw>
-<status status="PASS" starttime="20220318 11:05:47.980" endtime="20220318 11:06:34.688"/>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220319 18:20:39.464" rpa="false" schemaversion="2">
+<suite id="s1" name="Verify Emergency Contact Suite" source="E:\LTTS\robort\robot_framework\my_info_suite\verify_emergency_contact_suite.robot">
+<test id="s1-t1" name="Verify Add Emergency Contact Test">
+<status status="FAIL" starttime="20220319 18:21:32.345" endtime="20220319 18:21:32.356">Test case contains no keywords.</status>
 </test>
-<doc>credential test.</doc>
-<status status="PASS" starttime="20220318 11:05:44.132" endtime="20220318 11:06:34.696"/>
+<doc>This suite handles test case related to emergency contact</doc>
+<status status="FAIL" starttime="20220319 18:20:39.466" endtime="20220319 18:21:32.364"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Verify Validcredential Suite">Verify Validcredential Suite</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Verify Emergency Contact Suite">Verify Emergency Contact Suite</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220319 18:21:32.085" level="ERROR">[ DataDriver ] Error in robot file:
+  File "E:\LTTS\robort\robot_framework\my_info_suite\verify_emergency_contact_suite.robot", line 0</msg>
+<msg timestamp="20220319 18:21:32.088" level="ERROR">In source file:
+  File "E:\LTTS\robort\robot_framework\my_info_suite\../test_data/orange_data.xlsx", line 0</msg>
+<msg timestamp="20220319 18:21:32.342" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: ValueError: Worksheet named 'AddEmergencyContact' not found</msg>
 </errors>
 </robot>

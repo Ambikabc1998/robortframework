@@ -1,16 +1,17 @@
 *** Settings ***
-Documentation
-...  credential test.
+Documentation      This suite will handles all the test cases related to valid
+...     credential test for orangehrm. Test case - TC_OH_2
+Resource      ../Resource/Base/CommonFunctionality.resource
+Resource    ../Resource/Pages/LoginPage.resource
+Resource    ../Resource/Pages/MainPage.resource
 
-Resource    ../Resource/Base/CommonFunctionality.resource
-
-Test Setup      Launch Browser and navigate to url
-Test Teardown       Close Browser
+Test Setup      Launch Browser And Navigate To URL
+Test Teardown      Close Browser
 
 *** Test Cases ***
-verify Valid Credential Test
-    Input Text    id=txtUsername    Admin
-    Input Password    id=txtPassword    admin123
-    Click Element    id=btnLogin
-    Page Should Contain    My Info
+Verify Valid Credential Test
+    Enter Username      Admin
+    Enter Password    admin123
+    Click On Login
+    MainPage Should Contain    My Info    Welcome
     Capture Page Screenshot
